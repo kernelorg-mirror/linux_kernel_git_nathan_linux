@@ -545,7 +545,7 @@ if [ "$platform" != "miboot" ]; then
         text_start="-Ttext $link_address"
     fi
 #link everything
-    $ld -m $format -T $lds $text_start $pie $nodl $rodynamic $notext -o "$ofile" $map \
+    $ld -m $format -T $lds $text_start $pie $nodl $rodynamic $notext -z norelro -o "$ofile" $map \
 	$platformo $tmp $object/wrapper.a
     rm $tmp
 fi
