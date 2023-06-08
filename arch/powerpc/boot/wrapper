@@ -313,6 +313,7 @@ pseries)
 	pie=-pie
     fi
     make_space=n
+    notext='-z notext'
     ;;
 maple)
     platformo="$object/of.o $object/epapr.o"
