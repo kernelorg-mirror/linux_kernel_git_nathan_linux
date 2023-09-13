@@ -380,7 +380,9 @@ epapr)
     link_address='0x20000000'
     pie=-pie
     notext='-z notext'
-    rodynamic=$(if ${CROSS}ld -V 2>&1 | grep -q LLD ; then echo "-z rodynamic"; fi)
+    if ld_is_lld; then
+        rodynamic='-z rodynamic'
+    fi
     ;;
 mvme5100)
     platformo="$object/fixed-head.o $object/mvme5100.o"
